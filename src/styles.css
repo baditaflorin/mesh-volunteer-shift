@@ -1,6 +1,3 @@
-/* App-local styles. Mesh chrome (settings drawer, self-ref bar) is provided by
- * @baditaflorin/mesh-common/styles.css imported in main.tsx. */
-
 :root {
   color-scheme: dark;
 }
@@ -19,33 +16,211 @@ body,
   background: var(--mesh-bg);
   color: var(--mesh-fg);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  -webkit-tap-highlight-color: transparent;
 }
 
-.feature-placeholder {
-  padding: 6rem 1.5rem 2rem;
-  text-align: center;
+.vol-screen {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.25rem 6rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
 }
 
-.feature-placeholder h1 {
+.vol-header h1 {
   font-size: 1.6rem;
-  margin: 0;
+  margin: 0 0 0.25rem;
   color: var(--mesh-accent);
 }
 
-.feature-placeholder p {
-  max-width: 32rem;
+.vol-status {
   margin: 0;
-  opacity: 0.85;
-  line-height: 1.5;
+  opacity: 0.7;
+  font-size: 0.9rem;
 }
 
-.feature-status {
+.vol-name input {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--mesh-fg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.4rem;
+}
+
+.vol-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.vol-empty {
+  opacity: 0.5;
+  font-style: italic;
+  text-align: center;
+}
+
+.vol-slot {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.5rem;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vol-slot.is-mine {
+  border-color: var(--mesh-accent);
+}
+
+.vol-slot.is-over {
+  border-color: rgba(255, 99, 71, 0.6);
+  background: rgba(255, 99, 71, 0.06);
+}
+
+.vol-slot-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.vol-slot-meta {
+  font-size: 1.02rem;
+}
+
+.vol-slot-label {
+  opacity: 0.75;
+}
+
+.vol-slot-count {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.85;
+}
+
+.vol-warn {
+  margin-left: 0.5rem;
+  color: #ff6b6b;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.vol-slot-claims {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.vol-slot-claims li {
+  padding: 0.25rem 0.65rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  font-size: 0.88rem;
+}
+
+.vol-slot-claims li.is-me {
+  background: rgba(139, 92, 246, 0.3);
+  border: 1px solid rgba(139, 92, 246, 0.6);
+}
+
+.vol-slot-claims li.is-over-cap {
+  background: rgba(255, 99, 71, 0.18);
+  color: #ffd1c4;
+}
+
+.vol-slot-actions {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: flex-end;
+}
+
+.vol-claim-btn {
+  padding: 0.45rem 1rem;
+  background: var(--mesh-accent);
+  color: #0e1117;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.vol-claim-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.vol-claim-btn.is-mine {
+  background: transparent;
+  color: var(--mesh-fg);
+  border: 1px solid var(--mesh-accent);
+}
+
+.vol-rm-btn {
+  padding: 0.45rem 0.8rem;
+  background: transparent;
+  color: var(--mesh-fg);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.4rem;
+  cursor: pointer;
   font-size: 0.85rem;
   opacity: 0.6;
-  font-variant-numeric: tabular-nums;
+}
+
+.vol-rm-btn:hover {
+  opacity: 1;
+  border-color: rgba(255, 90, 90, 0.6);
+  color: #ff6b6b;
+}
+
+.vol-add {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vol-add-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.vol-add input {
+  padding: 0.55rem 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--mesh-fg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.4rem;
+}
+
+.vol-add-row {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.vol-add-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.vol-add-row button {
+  padding: 0.5rem 1rem;
+  background: var(--mesh-accent);
+  color: #0e1117;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.vol-add-row button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
