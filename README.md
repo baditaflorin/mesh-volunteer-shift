@@ -1,7 +1,7 @@
 # mesh-volunteer-shift
 
 [![pages](https://img.shields.io/badge/live-baditaflorin.github.io%2Fmesh-volunteer-shift-8b5cf6)](https://baditaflorin.github.io/mesh-volunteer-shift/)
-[![version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/baditaflorin/mesh-volunteer-shift/blob/main/package.json)
+[![version](https://img.shields.io/badge/version-0.1.1-blue)](https://github.com/baditaflorin/mesh-volunteer-shift/blob/main/package.json)
 [![license](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 > Volunteer shift signup board with capacity warnings, no account, mesh-synced
